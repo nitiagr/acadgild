@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Form</title>
+</head>
+<body>
+<form>
+<div style="border:1px solid blue;padding:10px;width:400px">
+Your Details:
+<p>Name: <input type="text" name="userName"/><br>
+Email: <input type="text" name="email"/></p>
+</div><br>
+<div style="border:1px solid blue;padding:10px;width:400px">
+Your Review:
+<p>How did you hear about us?
+<select name="heardFrom">
+<option>Google</option>
+<option>Newspaper</option>
+<option>Adds</option>
+<option>Others</option>
+</select>
+</p>
+<p>
+Would you visit again?<br>
+<input type="radio" name="visit" value="yes"/>Yes 
+<input type="radio" name="visit" value="no"/>No
+<input type="radio" name="visit" value=e"may"/>Maybe 
+</p>
+<p>Comments:<br>
+<textarea rows="5" cols="20" name="comments">
+</textarea>
+</p>
+<p>
+<input type="checkbox" name="signForUpdate" checked/> Sign me up for email updates
+</p>
+<submit>
+<input type="submit" name="submitReview" value="Submit Review"/>
+</submit>
+</div>
+</form>
+</body>
+</html>
