@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <script>
+            document.body.onload = addElement;
+
+            function addElement() { 
+              var newElement = document.createElement("p"); 
+              var newContent = document.createTextNode("Hello World!"); 
+              newElement.appendChild(newContent);  
+              document.body.appendChild(newElement);
+            }
+        </script>
+    </header>
+    <body>        
+    </body>
+</html>
