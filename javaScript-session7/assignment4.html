@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+    	<script>   
+            var output="";
+            var count = 0;
+            function getPos(e){            
+    		x=e.clientX;
+    		y=e.clientY;
+    		cursor= "Your Mouse Position Is : " + x + " and " + y + " " + new Date();
+            count ++;
+                if(count >30){
+                    count =0;
+                    output=cursor;
+                }else{
+                    output = output + "<br>" + cursor;          
+                }
+    		document.getElementById("displayArea").innerHTML=output;
+    	}
+    	</script>
+    </head>
+    
+    <body onmousemove="getPos(event)">
+        <p> &nbsp;</p>
+      <p id="displayArea"></p>
+    </body>
+    </html>

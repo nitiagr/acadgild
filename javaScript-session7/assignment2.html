@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hide Odd Rows</title>    
+    </head>
+    <body>
+        <table id="theTable" border="2px">
+            <tr><td>Row1</td></tr>
+            <tr><td>Row2</td></tr>
+            <tr><td>Row3</td></tr>
+            <tr><td>Row4</td></tr>
+            <tr><td>Row5</td></tr>
+            <tr><td>Row6</td></tr>
+        </table>
+        <button id="hideOdd">Hide Odds</button>        
+        <script>
+            var table = document.querySelector("#theTable"); 
+            var rows = table.getElementsByTagName("tr");  
+            var ref = document.querySelector('#hideOdd');
+            ref.addEventListener('click',function toggleContent(){
+                for(i = 0; i < rows.length; i++){  
+                   if(i%2==0){
+                      rows[i].style.display="none";                     
+                    }
+                }        
+            });
+        </script>
+    </body>
+</html>

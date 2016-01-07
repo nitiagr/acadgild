@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Like Unlike Button</title>    
+    </head>
+    <body>
+        Toggle between Like Unlike button:
+        <button id="likeUnlike">Like</button>        
+        <script>
+            var ref = document.querySelector('#likeUnlike');
+            ref.addEventListener('click',function toggleContent(){
+                if(ref.innerHTML == "Unlike"){
+                     ref.innerHTML="Like";        
+                }else{
+                    ref.innerHTML="Unlike"; 
+                }   
+            });
+        </script>
+    </body>
+</html>
