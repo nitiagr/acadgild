@@ -1,0 +1,35 @@
+<!Doctype html>
+<head>
+	<title>
+		Student Login Page
+	</title>
+    <link rel = "stylesheet" href = "assignment1.css">
+</head>
+<body>
+    <header>
+        <h1>Enter the System</h1>
+       <p> It is neccessary to Login to your account in order to sign up for a course.  </p>      
+    </header>
+    <section id="register">
+       <p> ARE YOU NEW? REGISTER </p>
+       <form name="register" method="post">           
+           <p><input type="text" name="userName" placeholder="User Name"/></p>
+           <p><input type="email" name="email" placeholder="Email"/></p>
+           <p><input type="password" name="password" placeholder="Password"/></p>
+           <p><input type="password" name="confirmpassword" placeholder="Confirm Password"/></p>
+            <button class="registerButton">Register</button>
+       </form>
+    </section>
+    <section id="login">
+        <p><strong>ALREADY A STUDENT? LOGIN</strong></p>
+       
+        <form name="login" method="post">           
+           <p><input size="45px" type="text" name="userName" placeholder="User Name"/></p>
+           <p><input size="45px" type="password" name="password" placeholder="Password"/></p>
+           <p><input type="checkbox" width="10px">Remember Me &nbsp;<button class="loginButton">Login</button></p>
+            <a href="#">Forgot Password?</a>
+            
+       </form>
+    </section>
+</body>
+</html>

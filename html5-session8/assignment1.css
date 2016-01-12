@@ -1,0 +1,59 @@
+body {
+    width: 750px;
+    height: 700px;
+    margin: 15px auto;
+    background-color: lavender;
+    position: relative;
+}
+
+#register, #login{      
+    padding:15px;
+    position: absolute;
+}
+
+#register{
+    width: 230px;
+    top:100px;
+    left:0;
+}
+
+#register input{
+    border-color: orangered;
+    width: 200px;
+    height: 20px;
+}
+
+#login{
+    top:100px;
+    left:280px;
+    width: 400px;
+    height: 230px;
+    background-color: darkblue;
+    color: white;
+}
+
+.registerButton{
+    margin-left: 60px;
+    color: black;
+    border-color: black;
+    border-bottom-color: lightgrey;
+    padding: 5px 30px;
+    background-color: lavender;
+}
+
+#login a{
+    color: white;
+    margin-left: 250px;
+    font-size: 12px;
+}
+
+.loginButton{
+    border-color: orange;
+    border-style: solid;
+    color: white;
+    background-color: darkblue;   
+    margin-left: 150px;
+    padding: 5px 20px;
+    
+}
+

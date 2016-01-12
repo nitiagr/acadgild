@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html><head>
+<title>
+	Example of GeoLocation
+</title>
+<style>
+#result{
+	padding: 10px;
+	margin: 20px;
+	border:2px solid green;
+}
+</style>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"> </script>
+	<script>   
+	function getMyLocation(){
+		navigator.geolocation.getCurrentPosition(locationSuccess,locationFail);
+        console.log("Calling Test");
+	}
+        var addresslink,address;
+	function locationSuccess(position) {
+		latitude = position.coords.latitude;
+		longitude = position.coords.longitude;    
+		document.getElementById("result").innerHTML = "location in latitude and longitude is "+latitude+"ANd " +longitude;
+        addresslink = "http://maps.googleapis.com/maps/api/geocode/json?latlng="+latitude+","+longitude+"&sensor=true";        
+        console.log(addresslink);  
+        $.get(addresslink,function(response){          
+            address =  response['results'][0]['address_components'][0]['long_name'] + 
+                       ", " +
+                       response['results'][0]['address_components'][3]['long_name'] +
+                       ", " +
+                       response['results'][0]['address_components'][4]['long_name'] +
+                       ", " +
+                       response['results'][0]['address_components'][5]['long_name'];
+            console.log(address);
+            document.getElementById('result').innerHTML=address;
+            
+        });
+        
+    } 
+        
+    function showPosition(){
+        navigator.geolocation.getCurrentPosition(showMap);
+    }
+    function showMap(position){
+        // Get location data
+        var latlong = position.coords.latitude + "," + position.coords.longitude;
+        
+        // Set Google map source url
+        var mapLink = "http://maps.googleapis.com/maps/api/staticmap?center="+latlong+"&zoom=16&size=400x300&output=embed";
+        
+        // Create and insert Google map
+        document.getElementById("embedMap").innerHTML = "<img alt='Map Holder' src='"+ mapLink +"'>";
+    }
+
+	function locationFail() {
+		alert("Oops, could not find you.");
+	}
+
+	</script>
+</head>
+<body>
+	<button onclick = "getMyLocation();showPosition();">Run Geolocation</button>
+	<div id = "result">Result will be displayed here</div>
+    <div id="embedMap">
+        <!--Google map will be embedded here-->
+    </div>
+</body>
+</html>
