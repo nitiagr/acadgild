@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+   <head>   
+   <title>Java Script objects</title>   
+      <script type="text/javascript">
+         function person(firstName, lastName, email, phone){
+             this.firstName = firstName;
+             this.lastName = lastName;
+             this.email = email;
+             this.phone = phone;           
+         }
+        var student1 = new person('Niti', 'Agrawal', 'niti@yahoo.com', '1234567890');
+          document.write("Name is new : " + student1.firstName + " " + student1.lastName + "<br>");
+          document.write("Email is new: " + student1.email + "<br>");
+          document.write("Phone is: " + student1.phone);  
+      </script>      
+   </head>
+   <body>   
+      
+   </body>
+</html>

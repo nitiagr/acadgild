@@ -1,0 +1,80 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+  <title>Dual List Box</title> 
+  <script> 
+      
+  function addItems() {
+    var ai = document.getElementById("availableItems"); 
+    var si = document.getElementById("selectedItems"); 
+    for (i=0;i<ai.options.length;i++) { 
+      if (ai.options[i].selected) { 
+        var opt = ai.options[i]; 
+        si.options[si.options.length] = new Option(opt.innerHTML, opt.value); 
+        ai.options[i] = null; i = i - 1; 
+      } 
+    } 
+  } 
+
+  function addAll() { 
+    var ai = document.getElementById("availableItems"); 
+    var si = document.getElementById("selectedItems"); 
+    for (i=0;i<ai.options.length;i++) { 
+      var opt = ai.options[i]; 
+      si.options[si.options.length] = new Option(opt.innerHTML, opt.value); 
+    } 
+    ai.options.length = 0; 
+  } 
+
+  function removeItems() {
+    var ai = document.getElementById("availableItems"); 
+    var si = document.getElementById("selectedItems"); 
+    for (i=0;i<si.options.length;i++) { 
+      if (si.options[i].selected) { 
+        var opt = si.options[i]; 
+        ai.options[ai.options.length] = new Option(opt.innerHTML, opt.value); 
+        si.options[i] = null; i = i - 1; 
+      } 
+    }    
+  } 
+
+  function removeAll() { 
+    var ai = document.getElementById("availableItems"); 
+    var si = document.getElementById("selectedItems"); 
+    for (i=0;i<si.options.length;i++) { 
+      var opt = si.options[i]; 
+      ai.options[ai.options.length] = new Option(opt.innerHTML, opt.value); 
+    } 
+    si.options.length = 0;     
+  }  
+  </script> 
+
+  <style type="text/css"> 
+    .btn {width:90px;} 
+  </style> 
+</head> 
+<body> 
+<div style="width:130px;float:left;"> 
+<select size="10" multiple id="availableItems" style="width:120px;"> 
+    <option>Test Name 1</option>
+    <option>Test Name 2</option>
+    <option>Test Name 3</option>
+    <option>Test Name 4</option>
+    <option>Test Name 5</option>
+    <option>Test Name 6</option>
+    <option>Test Name 7</option>
+    <option>Test Name 8</option>
+</select> 
+</div> 
+<div style="width:100px;float:left;"> 
+    <p><input type="button" class="btn" value="Add All" onclick="addAll();" /></p>
+    <p><input type="button" class="btn" value="Add" onclick="addItems();" /></p> 
+    <p><input type="button" class="btn" value="Remove" onclick="removeItems();" /></p>
+    <p><input type="button" class="btn" value="Remove All" onclick="removeAll();" /></p>
+</div> 
+<div style="width:130px;float:left"> 
+<select size="10" multiple="multiple" id="selectedItems" style="width:120px;"> 
+</select> 
+</div> 
+</body> 
+</html>

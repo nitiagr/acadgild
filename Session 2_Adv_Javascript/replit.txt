@@ -1,0 +1,244 @@
+
+//Session 2 - Assignment 2 
+/*function outerFunc(outerparam){
+    var innerFunc = function (inputparam){
+    return outerparam*inputparam;
+  }
+  return innerFunc;
+}
+var closureFunc = outerFunc(5);
+alert(closureFunc(4));*/
+
+//Session 2 - Assignment 4
+/*function outerFunc() {
+	function innerFunc() {
+		alert("Inside Inner Function");
+	}
+	innerFunc();
+}
+outerFunc();*/
+
+//Session 1- Assignment 1
+/*(function(){
+    alert('Hello World');
+})();
+*/
+
+
+//Session 1 - Assignment 2
+/*var result = (function(email_id){
+    var emailPattern = /^[a-zA-Z_\.\-]+@[a-zA-Z_\-\.]+?\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email_id);
+    })('xyzg@yahoo.com');
+console.log(result);*/
+
+
+//Session 1 - Assignment 3
+/*function FormValidation(name,email,phone){
+  var generateResult = function(address){
+      var r = false;
+      if(name && phone && name!=='' && phone!==''){
+          r=validate(email);
+      }
+      alert('You entered: '+ name + ', ' + email + ', ' +phone + ', ' + address);
+      return r;
+  }
+  return generateResult;
+}
+*/
+
+//Session 1- Assignment4
+
+/*(function(name,age,city){
+    alert("Name is "+ name +" Age is "+ age +" City is "+ city);
+}('XYZ','25','Bangalore'))
+
+
+var FormValidation = FormValidation('Niti','test@yahoo.com','');
+alert(FormValidation('Bangalore,India'));
+      
+
+function validate(email_id){
+    var emailPattern = /^[a-zA-Z_\.\-]+@[a-zA-Z_\-\.]+?\.[a-zA-Z]{2,4}$/;
+    return emailPattern.test(email_id);
+}
+*/
+
+/*function outerFunc(param) {
+	function innerFunc(input) {
+		return input * 4;
+	}
+	return 'The result is ' + innerFunc(param);
+}
+outerFunc(12);*/
+
+/*
+var outerFunc = function (param) {
+var innerFunc = function (innerParam) {
+	return innerParam * 4;
+};
+	return 'result is ' + innerFunc(param);
+};
+outerFunc(12);*/
+
+/*
+function outerFunc(param){
+	var privateVar = 5;
+  var innerFunc = function (input){
+     alert('param passed to function  is '+ param + 'and private variable is '+privateVar );
+    var sum = privateVar+input+param;
+     alert('addition of private var and input and param is '+sum);
+
+  }
+  return innerFunc;
+}
+var closureFunc = outerFunc(12);
+closureFunc(4);*/
+
+/*function TicketGenerator(transportMode){
+  var generateTicket = function(destination){
+    return transportMode+"--"+destination+"123";
+  }
+  return generateTicket;
+}
+
+var flightTicketGenerator = TicketGenerator("Flight");
+var shipTicketGenerator = TicketGenerator("Ship");
+alert(flightTicketGenerator("Chennai"));
+alert(shipTicketGenerator("singapore"));*/
+      
+/*
+function TicketGenerator(transportMode,classType){
+  var generateTicket = function(destination1,destination2){
+    return classType+transportMode+"--"+destination1+"123"+destination2;
+  }
+  return generateTicket;
+}
+
+var flightTicketGenerator = TicketGenerator("Flight","Business");
+var shipTicketGenerator = TicketGenerator("Ship","Executive");
+alert(flightTicketGenerator("Chennai","Mysore"));
+alert(shipTicketGenerator("singapore","USA"));
+*/
+
+
+
+/*
+function getNameFunction() {
+var name = 'Acadgild';
+return function getName() { return name; }
+}
+var displayName = function() {
+var getName = getNameFunction();
+alert( "Hello " + getName() + "!" );
+return getName;
+}(); //holds the getName() function
+alert(displayName); //call it again later...
+setTimeout( 'alert( "Your name is " + displayName() )', 10 );*/
+
+
+/*
+function Ftimes() {
+var FtimesObj = new Object()
+function Ftimes3(x) {
+return x * 3 ;
+}
+function Ftimes4(x) {
+return x * 4 ;
+}
+FtimesObj.Ftimes3 = Ftimes3 ;
+FtimesObj.Ftimes4 = Ftimes4 ;
+return FtimesObj ;
+}
+var Multi = new Ftimes();
+alert(Multi.Ftimes3(5)) ;// alerts 15
+alert(Multi.Ftimes4(5));*/
+
+
+/*(
+function (name,location) {
+	alert('Hello  name is ' + name + ' and location is '+location);
+}('smith','Bangalore')
+)*/
+
+/*(
+	function (test) {
+		alert('Hello World!');
+		alert(test);
+	}
+)('test');*/
+
+
+/*function invokeSum(a, b) {
+  return a() + b();
+}
+ invokeSum(
+	function () { return 5+4; },
+	function () { return 7+9; }
+)*/
+
+/*var response = alert("Enter the Javascript code you want to execute");
+eval(response);*/
+
+/*var anonymousFunc = function (msg) {
+	alert("The message passed as variable is "+msg);
+};
+anonymousFunc("Hello");*/
+/*
+var sum = new Function('a', 'b', 'return a + b;');
+alert(sum(4,5));*/
+
+/*function test() {
+	alert('inside test');
+	return function () {
+	alert('inside returned function');
+	};
+}
+var newFunc = test();
+newFunc();*/
+
+/*function invokeSum(a, b) {
+	return a() + b();
+}
+function returnOne() {
+	return 1;
+}
+function returnTwo() {
+	return 2;
+}
+alert(invokeSum(returnOne, returnTwo));*/
+
+
+/*var i = 'Hello';
+
+(function (){
+    alert(i);
+})();
+*/
+
+/*
+function Person(age,weight){
+	this.age = age;
+	this.weight = weight;
+};
+
+Person.prototype.getInfo = function(){
+	 return "I am " + this.age + " years old " +"and weighs " + this.weight +" kilo";
+};
+
+function Employee(age,weight,salary){
+	 this.age = age;
+	 this.weight = weight;
+	 this.salary = salary;
+}
+
+Employee.prototype = new Person();
+Employee.prototype.getInfo = function(){
+	return "I am " + this.age + " years old " +"and weighs " + this.weight +" kilo " +"and earns " + this.salary + " dollars";  
+};
+
+var person = new Person(50,90);
+var employee = new Employee(43,80,50000);
+
+console.log(person.getInfo());
+console.log(employee.getInfo());*/
