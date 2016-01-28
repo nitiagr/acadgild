@@ -1,0 +1,23 @@
+<!DOCTYPE htlm> 
+<html>
+<head>
+	<script src = "jquery.js"></script>
+	<script>
+	$(document).ready(function(){
+       
+		$('li').each(function(index){
+            console.log(index);    
+            $(this).prepend('<b>'+ index+" : </b>");
+        });		
+	})
+
+</script>
+</head>
+   <body>
+       <ui>
+           <li>Html Tutorial</li>
+           <li>Mongodb Tutorial</li>
+           <li>Python Tutorial</li>
+        </ui>
+    </body>
+</html>

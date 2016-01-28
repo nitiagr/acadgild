@@ -1,0 +1,25 @@
+<!DOCTYPE htlm> 
+<html>
+<head>
+	<script src = "jquery.js"></script>
+	<script>
+	$(document).ready(function(){
+        $("#field1").blur(function(){            
+            $(this).css("background-color", "lightgreen");
+        }); 
+        $("#field2").on("blur",function(){
+            $(this).css("background-color", "lightblue");
+        });
+	});    
+
+</script>
+</head>
+    <body>
+        <form>
+            <input id="field1" type="text" value="Field 1"><br>
+            <input id="field2" type="text" value="Field 2"><br>
+            <input type="submit" value="Enter">
+        </form>
+    </body>
+</html>
+

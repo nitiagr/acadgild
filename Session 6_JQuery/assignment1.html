@@ -1,0 +1,23 @@
+<!DOCTYPE htlm> 
+<html>
+<head>
+	<script src = "jquery.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("p").on('click',addElement);	
+        $("p").on('dblclick',addDoubleClickElement);
+	});
+    function addElement(){
+		$("body").append("<p>This is a Click Event</p>");
+	}
+    function addDoubleClickElement(){
+		$("body").append("<p>This is a Double Click Event</p>");
+	}
+
+</script>
+</head>
+<body>
+    <p>Click Me!</p>
+</body>
+</html>
+
