@@ -1,0 +1,30 @@
+<!DOCTYPE htlm>
+<html>
+    <head><title>Proto</title></head>
+    <body>
+        <script>
+            var Animal = {
+                name :'Lion',
+                displayInfo:function(){
+                    console.log("Test1");
+                },
+                baseCall: function(){
+                    console.log("Base Method!");                
+                }
+            }
+                
+            var Rabbit ={
+                color :'white',
+                displayInfo:function(){
+                    console.log("Test2");
+                }
+            }
+            
+            Rabbit.__proto__ = Animal;           
+            console.log(Rabbit.name);
+            console.log(Rabbit.color);  
+            console.log(Rabbit.displayInfo());  
+            console.log(Rabbit.baseCall());
+        </script>    
+    </body>
+</html>

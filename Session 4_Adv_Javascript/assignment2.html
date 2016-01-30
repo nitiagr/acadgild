@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title>Inheritence</title>
+    </head>
+    <body>
+        <script>
+            function Person(){
+                this.name= name;                 
+            }
+            
+            Person.prototype.setName = function(name){
+                this.name = name;
+            }
+            
+            Person.prototype.getName = function(){
+                return this.name;
+            }
+            
+            function Student(){
+                //this.name = name;
+            }
+            
+            Student.prototype = new Person();
+            
+            var s = new Student("Niti");
+            console.log(s.getName());
+            s.setName("New Name");
+            console.log(s.name);
+            console.log(s.getName());
+        </script>        
+    </body>
+</html>

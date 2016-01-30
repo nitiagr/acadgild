@@ -1,0 +1,64 @@
+<!DOCTYPE htlm> 
+<html>
+<head>
+	<title>FourWheel/Two Wheel</title>
+</head>
+<body>
+       
+    <div id="formID">
+    <h1>Vehicle Form</h1>
+    <form>
+        <p><input type="text" id="name" placeholder="Name"></p>
+        <p><input type="text" id="description" placeholder="Description"></p>
+        <p><input type="text" id="cost" placeholder="Cost Per Kilometer"></p>
+        <p><select id="type">
+            <option value="0">Vehicle Type</option>
+            <option value="1">2 Wheeler</option>
+            <option value="2">4 Wheeler</option>
+        </select></p>       
+    </form>
+     <p><input type="submit" value="Submit" onclick="displayValues();"></p>
+    </div>
+    <div id="displayHere">    
+    </div>
+</body>
+    <script>
+        var message;
+        function Vehicle(name,description,cost,type){
+            this.name = name;
+            this.description = description;
+            this.cost = cost;
+            this.type = type;            
+        }
+        
+        Vehicle.prototype.Two = function(){
+            message ="<h1>Two Wheeler Details</h1><p>Name:" + this.name + "</p>Description:"+ this.description + "</p>Cost per KM:" + 
+                this.cost +"</p>vehicle Type: 2 Wheeler";
+            document.getElementById("formID").style.display="none";
+            document.getElementById("displayHere").innerHTML=message;
+        }
+        
+        Vehicle.prototype.Four = function(){
+            message ="<h1>Four Wheeler Details</h1><p>Name:" + this.name + "</p>Description:"+ this.description + "</p>Cost per KM:" + 
+                this.cost +"</p><p>vehicle Type: 4 Wheeler</p><p>Fuel Type: CNG</p>";            
+            document.getElementById("formID").style.display="none";
+            document.getElementById("displayHere").innerHTML=message;            
+        }
+        
+        function displayValues(){           
+            var name = document.querySelector("#name").value;
+            var description = document.querySelector("#description").value;
+            var cost = document.querySelector("#cost").value;
+            var type = document.querySelector("#type").value;
+            var v = new Vehicle(name,description,cost,type);
+            if(v.type == "1"){
+                v.Two();
+            }else if(v.type == '2'){
+                v.Four();
+            }else{
+                alert("Please enter the type!!");
+            }        
+            
+        }
+    </script>
+</html>
